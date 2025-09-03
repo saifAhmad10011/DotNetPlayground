@@ -1,0 +1,14 @@
+@playground_HostAddress = http://localhost:5083
+
+# Example: Replace <token> with a valid JWT from JwtTokenGenerator
+GET {{playground_HostAddress}}/api/AuthTest/protected
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdHVzZXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc1NjkzOTI0OX0.NiV_-rQOsgb5XkaQm0thkkHM0WR7qLC19wNOCYLzqAU
+Accept: application/json
+
+###
+
+GET {{playground_HostAddress}}/api/AuthTest/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdHVzZXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc1NjkzOTI0OX0.NiV_-rQOsgb5XkaQm0thkkHM0WR7qLC19wNOCYLzqAU
+Accept: application/json
+
+###

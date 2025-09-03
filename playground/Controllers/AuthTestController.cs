@@ -7,24 +7,31 @@ namespace DotNetPlayground.Controllers
     [Route("api/[controller]")]
     public class AuthTestController : ControllerBase
     {
+        private readonly Services.IAuthTestService _service;
+
+        public AuthTestController(Services.IAuthTestService service)
+        {
+            _service = service;
+        }
+
         [HttpGet("public")]
         public IActionResult PublicEndpoint()
         {
-            return Ok("This endpoint is public.");
+            return Ok(_service.GetPublicMessage());
         }
 
         [Authorize]
         [HttpGet("protected")]
         public IActionResult ProtectedEndpoint()
         {
-            return Ok("This endpoint requires authentication.");
+            return Ok(_service.GetProtectedMessage());
         }
 
         [Authorize(Roles = "Admin")]
         [HttpGet("admin")]
         public IActionResult AdminEndpoint()
         {
-            return Ok("This endpoint requires Admin role.");
+            return Ok(_service.GetAdminMessage());
         }
     }
 }
